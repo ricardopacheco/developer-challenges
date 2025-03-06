@@ -33,7 +33,7 @@ Envie também quaiquer documentações da solução, endpoints, arquitetura, etc
 
 ## Entrega e avaliação do desafio
 
-Faça um fork deste repositório, crie uma branch com a solução proposta e submeta o PR para o upstream.
+Faça um fork deste repositório, crie uma branch com a solução proposta e submeta o PR para o upstream, assim poderemos revisar a solução juntos.
 
 Queremos que você mostre a melhor solução que você pode criar.
 
