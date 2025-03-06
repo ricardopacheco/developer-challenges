@@ -20,7 +20,7 @@ Envie também quaisquer documentações da solução, endpoints, arquitetura, qu
 - No cadastro, receber uma URL longa como parâmetro obrigatório.
 - O encurtamento deve ser composto por no mínimo 5 e no máximo 10 caracteres.
 - Apenas letras e números devem ser utilizados na composição da URL curta.
-- Contar e armazenar a quantidade de visitas da URL curta.
+- Contar e armazenar a quantidade de visitas e quando a URL curta foi acessada.
 - A URL encurtada poderá ter data de expiração, neste caso, considere receber e validar esse parâmetro opcional.
 - Ao acessar uma URL curta com data de expiração passada, devolver resposta como registro não encontrado.
 - Não é necessário frontend, apenas API.
