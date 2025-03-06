@@ -21,7 +21,7 @@ Envie também quaisquer documentações da solução, endpoints, arquitetura, qu
 - O encurtamento deve ser composto por no mínimo 5 e no máximo 10 caracteres.
 - Apenas letras e números devem ser utilizados na composição da URL curta.
 - Contar e armazenar a quantidade de acessos da URL curta.
-- Armazenar o histórico de acesso da URL curta com a data de acesso.
+- Ter histórico de acesso da URL curta com a data de acesso.
 - A URL encurtada poderá ter data de expiração, neste caso, considere receber e validar esse parâmetro opcional.
 - Ao acessar uma URL curta com data de expiração passada, devolver resposta como registro não encontrado.
 - Não é necessário frontend, apenas API.
