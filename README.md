@@ -35,13 +35,13 @@ Envie também quaiquer documentações da solução, endpoints, arquitetura, etc
 
 Faça um fork deste repositório, crie uma branch com a solução proposta e submeta o PR para o upstream, assim poderemos revisar a solução juntos.
 
-Queremos que você mostre a melhor solução que você pode criar.
-
 Boas práticas de desenvolvimento são importantes e serão analisadas, como: testes, DRY, 12-factor App, etc. Também vamos analisar a organização do código de forma geral.
 
 É esperado que sua solução tenha um README com instruções de setup e consigamos executá-la em poucos passos sem complicações.
 
 É preferível que você utilize Ruby on Rails, pois faz parte da nossa principal stack de desenvolvimento, mas você também pode resolver com outras linguagens e frameworks das quais se sente mais confortável.
+
+Queremos que você mostre a melhor solução que você pode criar.
 
 Você tem o prazo de 3 dias corridos a partir do recebimento do desafio, e a entrega é considerada com a abertura do PR.
 
