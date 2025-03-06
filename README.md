@@ -2,7 +2,7 @@
 
 Desafios para desenvolvedores da SPC Grafeno.
 
-Esta é uma etapa importante do processo de formação de equipe e esperamos que você aproveite este momento para que possamos conhecer melhor sua habilidades técnicas. Para isso, seguem algumas recomendações:
+Esta é uma etapa importante do processo de formação de equipe e esperamos que você aproveite este momento para podermos conhecer melhor suas habilidades técnicas. Para isso, seguem algumas recomendações:
 - Não copie da internet.
 - Não copie de outro candidato.
 - Dedique tempo suficiente durante a solução do desafio e foque no que é importante para funcionar, pense como um produto que precisa ser entregue para o cliente final.
@@ -14,7 +14,7 @@ Implementar um serviço que permita encurtar URLs a fim de torná-las mais legí
 
 O serviço deve ser capaz de encurtar uma URL longa, desfazer o encurtamento quando a URL curta for acessada e redirecionar para a URL original cadastrada pelo usuário.
 
-Envie também quaiquer documentações da solução, endpoints, arquitetura, etc que você tenha utilizado durante o desenvolvimento pois será um plus.
+Envie também quaisquer documentações da solução, endpoints, arquitetura, que você tenha utilizado durante o desenvolvimento, pois será um plus.
 
 ### Requisitos de negócio
 - No cadastro, receber uma URL longa como parâmetro obrigatório.
@@ -28,7 +28,7 @@ Envie também quaiquer documentações da solução, endpoints, arquitetura, etc
 - Deve ser uma API em json.
 - Considere a melhor escolha dos verbos HTTP para cada cenário.
 - Não é necessário se preocupar com autenticação, mas se quiser implementar, nos mostre como você faria.
-- Utilize o banco de dados e outras tecnologias de sua escolha para a compor a solução proposta.
+- Utilize o banco de dados e outras tecnologias de sua escolha para compor a solução proposta.
 - É necessário que a sua solução execute em Docker.
 
 ## Entrega e avaliação do desafio
