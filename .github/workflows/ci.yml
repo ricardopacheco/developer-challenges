@@ -1,0 +1,55 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  rubocop:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4.2"
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
+      - name: Analyze code
+        run: bundle exec standardrb
+      - name: Check security vulnerabilities
+        run: bundle exec brakeman
+  rspec:
+    runs-on: ubuntu-24.04
+    env:
+      CI: true
+      RACK_ENV: test
+      RAILS_ENV: test
+    services:
+      postgres:
+        image: postgres:17.4
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install postgres client dependencies
+        run: sudo apt install -y $(awk '!/^ *#/ && NF > 0' "$PWD/devops/host/development/linux/ubuntu/Aptfile")
+      - name: Copy .env.test file
+        run: cp lib/templates/.env.test.template .env.test
+      - name: Load .env.test file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./
+          mode: test
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4.2"
+          bundler-cache: true
+      - name: Create database
+        run: bundle exec rails db:create db:migrate
+      - name: Run suite
+        run: bundle exec rspec --color --format progress
