@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 class DummyLink
   include ActiveModel::Model
@@ -32,7 +32,7 @@ describe UrlValidator, type: :validator do
 
       it "expects URL to be invalid" do
         expect(link).to be_invalid
-        expect(link.errors[:url]).to include(I18n.t('errors.messages.invalid'))
+        expect(link.errors[:url]).to include(I18n.t("errors.messages.invalid"))
       end
     end
   end

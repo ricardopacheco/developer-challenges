@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe VisitLink, type: :model do
   describe "Associations" do

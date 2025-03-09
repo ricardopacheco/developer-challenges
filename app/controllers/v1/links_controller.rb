@@ -14,7 +14,7 @@ module V1
       if link.present?
         render json: V1::LinkSerializer.new(link), status: :ok
       else
-        render json: { error: I18n.t("record_not_found") }, status: :not_found
+        render json: {error: I18n.t("record_not_found")}, status: :not_found
       end
     end
 
@@ -50,7 +50,7 @@ module V1
 
     def show_link_params
       params.permit(:short)
-        .with_defaults(metadata: { ip: request.remote_ip, user_agent: request.user_agent, referer: request.referer })
+        .with_defaults(metadata: {ip: request.remote_ip, user_agent: request.user_agent, referer: request.referer})
         .to_h.with_indifferent_access
     end
 

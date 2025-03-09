@@ -38,7 +38,7 @@ describe V1::LinksController, type: :controller do
 
   describe "GET #info" do
     context "when the link does not exist" do
-      before { get :info, params: { id: 100_000 }, format: :json }
+      before { get :info, params: {id: 100_000}, format: :json }
 
       it "returns a not found response" do
         expect(response).to have_http_status(:not_found)
@@ -47,7 +47,7 @@ describe V1::LinksController, type: :controller do
     end
 
     context "when the link exists" do
-      before { get :info, params: { id: link.id }, format: :json }
+      before { get :info, params: {id: link.id}, format: :json }
 
       it "returns a success response with link record" do
         expect(response).to have_http_status(:ok)
@@ -58,7 +58,7 @@ describe V1::LinksController, type: :controller do
 
   describe "GET #show" do
     context "when the link does not exist" do
-      before { get :show, params: { short: "invalid" } }
+      before { get :show, params: {short: "invalid"} }
 
       it "returns a not found response" do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -67,7 +67,7 @@ describe V1::LinksController, type: :controller do
     end
 
     context "when the link exists" do
-      before { get :show, params: { short: link.short } }
+      before { get :show, params: {short: link.short} }
 
       it "returns a permanent redirect response" do
         expect(response).to have_http_status(:permanent_redirect)
@@ -80,7 +80,7 @@ describe V1::LinksController, type: :controller do
     before { post :create, params: attributes, as: :json }
 
     context "with invalid params" do
-      let(:attributes) { { url: nil } }
+      let(:attributes) { {url: nil} }
 
       it "renders a JSON response with errors" do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -89,7 +89,7 @@ describe V1::LinksController, type: :controller do
     end
 
     context "with valid params" do
-      let(:attributes) { { url: "url.com" } }
+      let(:attributes) { {url: "url.com"} }
 
       it "expects create a new link" do
         expect(response).to have_http_status(:created)
@@ -103,7 +103,7 @@ describe V1::LinksController, type: :controller do
     before { put :update, params: attributes, as: :json }
 
     context "with invalid params" do
-      let(:attributes) { { id: link.id, url: nil } }
+      let(:attributes) { {id: link.id, url: nil} }
 
       it "renders a JSON response with errors" do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -112,7 +112,7 @@ describe V1::LinksController, type: :controller do
     end
 
     context "with valid params" do
-      let(:attributes) { { id: link.id, url: "updatedurl.com" } }
+      let(:attributes) { {id: link.id, url: "updatedurl.com"} }
 
       it "expects update the link" do
         expect(response).to have_http_status(:ok)
@@ -126,7 +126,7 @@ describe V1::LinksController, type: :controller do
     before { delete :destroy, params: attributes, as: :json }
 
     context "with invalid params" do
-      let(:attributes) { { id: 100_000 } }
+      let(:attributes) { {id: 100_000} }
 
       it "renders a JSON response with errors" do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -135,7 +135,7 @@ describe V1::LinksController, type: :controller do
     end
 
     context "with valid params" do
-      let(:attributes) { { id: link.id } }
+      let(:attributes) { {id: link.id} }
 
       it "expects destroy the link" do
         expect(response).to have_http_status(:no_content)

@@ -18,7 +18,7 @@ RSpec.describe LinkContext::ViewLinkServiceContract, type: :contract do
     end
 
     context "when the link is not found in the database" do
-      let(:attributes) { { short: "shot-rxample" } }
+      let(:attributes) { {short: "shot-rxample"} }
 
       it "expect failure with error messages" do
         expect(contract).to be_failure
@@ -27,7 +27,7 @@ RSpec.describe LinkContext::ViewLinkServiceContract, type: :contract do
     end
 
     context "when the link is found in the database" do
-      let(:attributes) { { short: link.short } }
+      let(:attributes) { {short: link.short} }
 
       context "when link is expired" do
         let(:link) { create(:link, :with_expired_date_skip_validation) }

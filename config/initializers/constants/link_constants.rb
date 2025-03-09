@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-LINK_SHORT_CHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LINK_SHORT_CHARACTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 URL_REGEX_CONSTANT = %r{
   \A
   (?=.{3,2000}\z)                # Total length (3-2000 characters)
   (?:                            # Optional group for protocol
-    (?:(?:https?|ftp):)?\/\/     # Optional protocol (http, https, ftp)
+    (?:(?:https?|ftp):)?//     # Optional protocol (http, https, ftp)
     |                            # OR
     (?:www\.)?                   # Optional www prefix for URLs without protocol
   )?

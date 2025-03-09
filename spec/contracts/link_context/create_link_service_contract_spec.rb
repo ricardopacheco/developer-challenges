@@ -26,7 +26,7 @@ RSpec.describe LinkContext::CreateLinkServiceContract, type: :contract do
     end
 
     context "when expires_at is invalid" do
-      let(:attributes) { { url: "example.com", expires_at: Date.current } }
+      let(:attributes) { {url: "example.com", expires_at: Date.current} }
 
       it "expect failure with error messages" do
         expect(contract).to be_failure
@@ -35,7 +35,7 @@ RSpec.describe LinkContext::CreateLinkServiceContract, type: :contract do
     end
 
     context "when attributes are valid" do
-      let(:attributes) { { url: "example.com", expires_at: 1.week.from_now } }
+      let(:attributes) { {url: "example.com", expires_at: 1.week.from_now} }
 
       it "expect success" do
         expect(contract).to be_success

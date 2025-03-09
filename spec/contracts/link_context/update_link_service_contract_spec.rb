@@ -20,7 +20,7 @@ RSpec.describe LinkContext::UpdateLinkServiceContract, type: :contract do
     end
 
     context "when the link is not found in the database" do
-      let(:attributes) { { id: 100_000 } }
+      let(:attributes) { {id: 100_000} }
 
       it "expect failure with error messages" do
         expect(contract).to be_failure
@@ -31,7 +31,7 @@ RSpec.describe LinkContext::UpdateLinkServiceContract, type: :contract do
     end
 
     context "when the link is found in the database" do
-      let(:attributes) { { id: link.id, url: 'example.com' } }
+      let(:attributes) { {id: link.id, url: "example.com"} }
 
       it "expect to return success" do
         expect(contract).to be_success

@@ -20,7 +20,7 @@ RSpec.describe LinkContext::DeleteLinkService, type: :service do
     end
 
     context "when occours invalidation data in link model" do
-      let(:attributes) { { id: link.id } }
+      let(:attributes) { {id: link.id} }
 
       before do
         allow(link_model_class).to receive(:find_by).and_return(link)
@@ -41,7 +41,7 @@ RSpec.describe LinkContext::DeleteLinkService, type: :service do
     end
 
     context "when operation is valid" do
-      let(:attributes) { { id: link.id } }
+      let(:attributes) { {id: link.id} }
 
       before { link.touch }
 

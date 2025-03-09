@@ -21,7 +21,7 @@ RSpec.describe LinkContext::ViewLinkService, type: :service do
     end
 
     context "when occours invalidation data in visit link model" do
-      let(:attributes) { { short: link.short } }
+      let(:attributes) { {short: link.short} }
 
       before do
         allow_any_instance_of(visit_link_model_class).to receive(:save).and_return(false)
@@ -41,7 +41,7 @@ RSpec.describe LinkContext::ViewLinkService, type: :service do
     end
 
     context "when operation is valid" do
-      let(:attributes) { { short: link.short } }
+      let(:attributes) { {short: link.short} }
 
       before { link.touch }
 

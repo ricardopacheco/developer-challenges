@@ -18,15 +18,15 @@ module UrlFakeData
   def invalid_urls
     [
       nil,
-      'x.c',
-      "http://#{'a' * 2001}",
-      'ht*tp://invalido.com',
-      'http:///caminho.com',
-      'http://example..com',
-      'http://example.com:porta',
-      'invalid-url',
-      'example .com',
-      'https://<script>alert()</script>',
+      "x.c",
+      "http://#{"a" * 2001}",
+      "ht*tp://invalido.com",
+      "http:///caminho.com",
+      "http://example..com",
+      "http://example.com:porta",
+      "invalid-url",
+      "example .com",
+      "https://<script>alert()</script>"
     ]
   end
 end

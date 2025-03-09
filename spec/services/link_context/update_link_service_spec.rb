@@ -20,7 +20,7 @@ RSpec.describe LinkContext::UpdateLinkService, type: :service do
     end
 
     context "when occours invalidation data in link model" do
-      let(:attributes) { { id: link.id, url: 'updatedurl.com' } }
+      let(:attributes) { {id: link.id, url: "updatedurl.com"} }
 
       before do
         allow(link_model_class).to receive(:find_by).and_return(link)
@@ -42,8 +42,8 @@ RSpec.describe LinkContext::UpdateLinkService, type: :service do
 
     context "when operation is valid" do
       let(:old_url) { link.url }
-      let(:new_url) { 'updatedurl.com' }
-      let(:attributes) { { id: link.id, url: new_url } }
+      let(:new_url) { "updatedurl.com" }
+      let(:attributes) { {id: link.id, url: new_url} }
 
       it "expect to return success by creating link in the database" do
         expect { service }.to change { link.reload.url }.from(old_url).to(new_url)

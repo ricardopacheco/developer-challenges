@@ -7,9 +7,9 @@ class Link < ApplicationRecord
 
   has_many :visit_links, dependent: :destroy
 
-  validates :url, presence: true, length: { minimum: 3, maximum: 2000 }
+  validates :url, presence: true, length: {minimum: 3, maximum: 2000}
   validates :url, url: true, if: -> { url.present? }
-  validates :short, presence: true, uniqueness: true, length: { in: 5..10 }
+  validates :short, presence: true, uniqueness: true, length: {in: 5..10}
   validates_comparison_of :expires_at, greater_than: -> { Time.current }, if: -> { expires_at.present? }
 
   scope :active, -> { where("expires_at IS NULL OR expires_at >= ?", Time.current) }

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Link, type: :model do
   describe "Default values" do
@@ -48,7 +48,7 @@ RSpec.describe Link, type: :model do
 
         it "expects to be invalid" do
           expect(link).to be_invalid
-          expect(link.errors[:expires_at]).to include(I18n.t('errors.messages.greater_than', count: Time.current))
+          expect(link.errors[:expires_at]).to include(I18n.t("errors.messages.greater_than", count: Time.current))
         end
       end
     end
@@ -68,7 +68,7 @@ RSpec.describe Link, type: :model do
 
         it "expects to be invalid" do
           expect(link).to be_invalid
-          expect(link.errors[:url]).to include(I18n.t('errors.messages.invalid'))
+          expect(link.errors[:url]).to include(I18n.t("errors.messages.invalid"))
         end
       end
     end

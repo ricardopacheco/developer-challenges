@@ -19,13 +19,11 @@ group :development, :test do
   gem "dotenv-rails", "3.1.7"
   gem "faker", "3.5.1"
   gem "pry-rails", "0.3.11"
-  gem "standard", "1.33.0", require: false
+  gem "standard", "1.45.0", require: false
 end
 
 group :development do
-  gem "overcommit", "0.67.1", require: false
   gem "rspec-rails", "7.1.1"
-  gem "rubycritic", "4.9.1", require: false
 end
 
 group :test do
