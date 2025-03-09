@@ -34,6 +34,13 @@ docker compose run --rm app bundle exec rails db:prepare
 
 Now just start your full stack using `docker compose up`. You should be able to see the application running [locally](http://localhost:4000)
 
+To run suite of tests:
+
+```shell
+docker compose run --rm app /bin/bash
+CI=true RAILS_ENV=test bundle exec rspec .
+```
+
 ## Utils
 
 Here is a list of the most useful commands used in everyday life.
