@@ -50,6 +50,10 @@ jobs:
           ruby-version: "3.4.2"
           bundler-cache: true
       - name: Create database
+        env:
+          DATABASE_URL: "postgresql://postgres:@127.0.0.1/shortner_test?pool=10"
         run: bundle exec rails db:create db:migrate
       - name: Run suite
+        env:
+          DATABASE_URL: "postgresql://postgres:@127.0.0.1/shortner_test?pool=10"
         run: bundle exec rspec --color --format progress
